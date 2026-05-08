@@ -85,19 +85,10 @@ export function PricingSection() {
               {residentialPlans.map((plan) => (
                 <div
                   key={plan.name}
-                  className={`relative flex flex-col rounded-3xl border p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                    plan.featured
-                      ? 'border-purple-500 bg-gradient-to-br from-purple-600 to-violet-700 text-white shadow-2xl shadow-purple-200'
-                      : 'border-slate-100 bg-white text-slate-900 shadow-sm'
-                  }`}
+                  className="relative flex flex-col rounded-3xl border border-slate-100 bg-white p-8 text-center text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 >
-                  {plan.featured && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-900">
-                      Most Popular
-                    </div>
-                  )}
-                  <Home className={`mx-auto mb-4 h-8 w-8 ${plan.featured ? 'text-white/80' : 'text-purple-500'}`} />
-                  <p className={`text-sm font-semibold ${plan.featured ? 'text-white/70' : 'text-slate-500'}`}>
+                  <Home className="mx-auto mb-4 h-8 w-8 text-purple-500" />
+                  <p className="text-sm font-semibold text-slate-500">
                     {plan.name}
                   </p>
                   <div className="mt-4 flex items-center justify-center">

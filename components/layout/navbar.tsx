@@ -56,7 +56,7 @@ export function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link href="https://wa.me/254718477898" target="_blank">
-              <Button className="rounded-full bg-purple-600 px-5 text-white hover:bg-purple-700">
+              <Button className="rounded-md bg-purple-600 px-5 text-white hover:bg-purple-700">
                 <MessageCircle className="mr-1.5 h-4 w-4" />
                 Book Now
                 <ArrowUpRight className="ml-1.5 h-4 w-4" />
@@ -91,7 +91,7 @@ export function Navbar() {
             </nav>
 
             <Link href="https://wa.me/254718477898" target="_blank">
-              <Button className="mt-5 w-full rounded-full bg-purple-600 text-white hover:bg-purple-700">
+              <Button className="mt-5 w-full rounded-md bg-purple-600 text-white hover:bg-purple-700">
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Book Via WhatsApp
               </Button>

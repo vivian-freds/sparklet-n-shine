@@ -25,7 +25,7 @@ const phones = ['+254 718 477 898', '+254 383 2675']
 
 export function Footer() {
   return (
-    <footer className="bg-[#06101f] text-white">
+    <footer id="contact" className="bg-[#06101f] text-white">
 
       {/* ── Main grid ── */}
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">

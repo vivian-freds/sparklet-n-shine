@@ -1,21 +1,30 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sora, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/* ── Premium SaaS font stack ──────────────────────────────────────
+   Sora  → headings  (sharp, modern, used by top SaaS products)
+   Outfit → body     (geometric, crisp, highly legible)
+──────────────────────────────────────────────────────────────── */
+const sora = Sora({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Sparklet & Shine | Professional Cleaning Services",
-  description: "Premium residential and commercial cleaning services in Nairobi. Book online via WhatsApp today.",
+  description:
+    "Premium residential and commercial cleaning services in Nairobi. Book online via WhatsApp today.",
 };
 
 export default function RootLayout({
@@ -26,9 +35,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${sora.variable} ${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <Navbar />
         {children}
       </body>

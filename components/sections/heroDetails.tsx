@@ -110,7 +110,7 @@ export function HeroDetails() {
             href="https://wa.me/254718477898"
             target="_blank"
           >
-            <Button className="mt-8 rounded-full bg-purple-500 px-8 py-6 text-base font-semibold text-white hover:bg-purple-600">
+            <Button className="mt-8 rounded-md bg-purple-600 px-8 py-6 text-base font-semibold text-white hover:bg-purple-700">
               Book Via WhatsApp
               <ArrowUpRight className="ml-2 h-5 w-5" />
             </Button>
@@ -164,7 +164,7 @@ export function HeroDetails() {
             href="https://wa.me/254718477898"
             target="_blank"
           >
-            <Button className="mt-8 rounded-full bg-purple-500 px-7 py-6 text-white hover:bg-purple-600">
+            <Button className="mt-8 rounded-md bg-purple-600 px-7 py-6 text-white hover:bg-purple-700">
               Book Via WhatsApp
               <ArrowUpRight className="ml-2 h-5 w-5" />
             </Button>

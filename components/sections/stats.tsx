@@ -88,7 +88,7 @@ const stats = [
 
 export function StatsSection() {
   return (
-    <section className="w-full overflow-hidden bg-white py-10 md:py-20">
+    <section id="about" className="w-full overflow-hidden bg-white py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
         {/* ---------- Stats Grid ---------- */}
@@ -115,7 +115,7 @@ export function StatsSection() {
         <div className="relative mt-10">
 
           {/* Image Container */}
-          <div className="relative h-[320px] overflow-hidden rounded-[2rem] md:h-[420px]">
+          <div className="relative h-[400px] sm:h-[450px] overflow-hidden rounded-[2rem] md:h-[420px]">
 
             <Image
               src="/images/about-image.jpg"
@@ -193,7 +193,7 @@ export function StatsSection() {
 
               {/* CTA */}
               <Link href="#">
-                <Button className="mt-5 h-auto rounded-full bg-purple-600 px-5 py-4 text-sm font-semibold text-white transition-all hover:bg-purple-700">
+                <Button className="mt-5 h-auto rounded-md bg-purple-600 px-5 py-4 text-sm font-semibold text-white transition-all hover:bg-purple-700">
 
                   Learn More
 

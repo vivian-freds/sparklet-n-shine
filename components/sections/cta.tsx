@@ -45,14 +45,14 @@ export function CTASection() {
                 href="https://wa.me/254718477898"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-purple-700 shadow-lg transition hover:bg-amber-300 hover:text-purple-900"
+                className="inline-flex items-center justify-center gap-2 rounded-md bg-white px-6 py-3 text-sm font-bold text-purple-700 shadow-lg transition hover:bg-amber-300 hover:text-purple-900"
               >
                 <MessageCircle className="h-4 w-4" />
                 Book Now
               </Link>
               <Link
                 href="tel:+254718477898"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-white/10"
+                className="inline-flex items-center justify-center gap-2 rounded-md border border-white/40 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition hover:border-white hover:bg-white/10"
               >
                 <Phone className="h-4 w-4" />
                 Call Us

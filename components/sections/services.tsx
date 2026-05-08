@@ -12,9 +12,9 @@ const DEFAULT_IMAGE = "/images/bnb-cleaning.png";
 const services = [
   {
     id: "01",
-    title: "Residential Cleaning",
+    title: "BnB & Short-Stay Cleaning",
     description:
-      "Personalized home cleaning services tailored to your lifestyle. From deep cleans to regular maintenance, we keep your sanctuary spotless.",
+      "We specialise in quick, thorough turnovers for Airbnb and short-stay properties. Fresh linens, restocked amenities, and a hotel-standard finish — every time.",
     image: DEFAULT_IMAGE,
   },
   {
@@ -33,16 +33,16 @@ const services = [
   },
   {
     id: "04",
-    title: "Window & Glass Cleaning",
+    title: "Residential Cleaning",
     description:
-      "Crystal-clear windows and streak-free glass cleaning for homes and offices.",
+      "Personalised home cleaning services tailored to your lifestyle. From deep cleans to regular maintenance, we keep your sanctuary spotless.",
     image: DEFAULT_IMAGE,
   },
   {
     id: "05",
     title: "Post-Construction Cleaning",
     description:
-      "We remove dust, debris, and construction residue after renovations or new builds.",
+      "We remove dust, debris, and construction residue after renovations or new builds — leaving your space ready to move in.",
     image: DEFAULT_IMAGE,
   },
 ];
@@ -59,7 +59,7 @@ export function ServicesSection() {
   };
 
   return (
-    <section className="relative bg-[#F3F0FF] py-14 md:py-24">
+    <section id="services" className="relative bg-[#F3F0FF] py-14 md:py-24">
 
       <div className="mx-auto max-w-6xl px-4 md:px-6">
 
@@ -82,7 +82,7 @@ export function ServicesSection() {
             <Link href="#">
               <Button
                 variant="outline"
-                className="rounded-full border-slate-200 bg-white px-5 py-5 text-slate-700 hover:bg-slate-50"
+                className="rounded-md border-slate-200 bg-white px-5 py-5 text-slate-700 hover:bg-purple-50 hover:text-purple-700"
               >
                 View All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -162,7 +162,7 @@ export function ServicesSection() {
                           {service.description}
                         </p>
 
-                        <Button className="mt-5 rounded-full bg-purple-600 text-white hover:bg-purple-700">
+                        <Button className="mt-5 rounded-md bg-purple-600 text-white hover:bg-purple-700">
                           Learn More
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>

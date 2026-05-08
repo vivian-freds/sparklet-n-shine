@@ -47,7 +47,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="relative overflow-hidden bg-white py-14 md:py-24">
+    <section id="pricing" className="relative overflow-hidden bg-white py-14 md:py-24">
 
       {/* Soft purple background blob */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-purple-50 blur-3xl" />
@@ -118,7 +118,7 @@ export function PricingSection() {
               <div className="mt-8">
                 <Link href="https://wa.me/254718477898" target="_blank">
                   <Button
-                    className={`w-full rounded-full font-semibold ${
+                    className={`w-full rounded-md font-semibold ${
                       plan.featured
                         ? 'bg-white text-purple-700 hover:bg-amber-300 hover:text-purple-900'
                         : 'bg-purple-600 text-white hover:bg-purple-700'

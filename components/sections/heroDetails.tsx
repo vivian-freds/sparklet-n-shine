@@ -1,68 +1,4 @@
-// import Image from "next/image";
-// import Link from "next/link";
-// import { Button } from "../ui/button";
 
-// export function HeroDetails() {
-//   return (
-//     <div className="mx-auto mt-36 flex max-w-6xl items-start justify-between gap-8">
-      
-//       {/* Left Image */}
-//       <div className="w-1/4">
-//         <Image
-//           src="/hero-image.jpg"
-//           alt="Sparklet & Shine"
-//           width={500}
-//           height={600}
-//           className="h-auto w-full object-cover"
-//         />
-//       </div>
-
-//       {/* Center Content */}
-//       <div className="flex w-1/2 flex-col items-center text-center">
-        
-//         {/* Small Text */}
-//         <p className="mb-4 text-sm font-medium text-muted-foreground">
-//           ✨ Spotless Spaces, Stress-Free Living
-//         </p>
-
-//         {/* Heading */}
-//         <h1 className="text-5xl font-bold leading-tight tracking-tight">
-//           Premium Cleaning <br />
-//           Services You Can <br />
-//           Count On
-//         </h1>
-
-//         {/* Description */}
-//         <p className="mt-6 max-w-lg text-lg leading-8 text-muted-foreground">
-//           We don&apos;t just clean — we bring peace of mind.
-//           With eco-friendly products, skilled cleaners,
-//           and attention to every detail.
-//         </p>
-
-//         {/* CTA */}
-//         <Link
-//           href="https://wa.me/254718477898"
-//           target="_blank"
-//         >
-//           <Button className="mt-8 rounded-md px-8 py-6 text-base font-semibold">
-//             Book Via WhatsApp
-//           </Button>
-//         </Link>
-//       </div>
-
-//       {/* Right Image */}
-//       <div className="w-1/4">
-//         <Image
-//           src="/hero-image.jpg"
-//           alt="Sparklet & Shine"
-//           width={500}
-//           height={600}
-//           className="h-auto w-full object-cover"
-//         />
-//       </div>
-//     </div>
-//   );
-// }
 
 import Image from "next/image";
 import Link from "next/link";
@@ -79,7 +15,7 @@ export function HeroDetails() {
         {/* Left Image */}
         <div className="w-1/4">
           <Image
-            src="/hero-image.jpg"
+            src="/hero-image-2.png"
             alt="Sparklet & Shine"
             width={500}
             height={600}
@@ -120,7 +56,7 @@ export function HeroDetails() {
         {/* Right Image */}
         <div className="w-1/4">
           <Image
-            src="/hero-image.jpg"
+            src="/hero-image-1.png"
             alt="Sparklet & Shine"
             width={500}
             height={600}

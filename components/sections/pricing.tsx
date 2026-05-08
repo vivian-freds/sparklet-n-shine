@@ -1,51 +1,40 @@
-import { Check } from 'lucide-react'
+'use client'
+
+import { useState } from 'react'
+import { Check, Home, Sparkles, Building, Sofa, Plus } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
-const plans = [
-  {
-    name: 'Basic',
-    price: 'KSh 2,500',
-    period: 'per session',
-    description: 'Perfect for small spaces and regular upkeep.',
-    features: [
-      'Up to 2-bedroom home',
-      'Standard surface cleaning',
-      'Kitchen & bathroom',
-      'Dusting & vacuuming',
-    ],
-  },
-  {
-    name: 'Standard',
-    price: 'KSh 4,500',
-    period: 'per session',
-    description: 'Our most popular plan for busy households.',
-    features: [
-      'Up to 4-bedroom home',
-      'Deep clean all rooms',
-      'Inside appliances',
-      'Window interior cleaning',
-      'Eco-friendly products',
-    ],
-    featured: true,
-  },
-  {
-    name: 'Premium',
-    price: 'KSh 7,500',
-    period: 'per session',
-    description: 'Full-service clean for complete peace of mind.',
-    features: [
-      'Unlimited rooms',
-      'Move-in / move-out clean',
-      'Post-construction clean',
-      'Same-day service available',
-      'Dedicated cleaner team',
-      'Satisfaction guarantee',
-    ],
-  },
+const tabs = [
+  { id: 'residential', label: 'Deep Cleaning' },
+  { id: 'airbnb', label: 'Airbnb Turnover' },
+  { id: 'addons', label: 'Add-Ons' },
+]
+
+const residentialPlans = [
+  { name: 'Studio', price: 'KES 3,000 - 4,000' },
+  { name: '1 Bedroom', price: 'KES 4,000 - 5,000' },
+  { name: '2 Bedroom', price: 'KES 5,500 - 7,000', featured: true },
+  { name: '3 Bedroom', price: 'KES 7,000 - 8,500+' },
+]
+
+const airbnbPlans = [
+  { name: 'Studio', daily: 'KES 700', monthly: 'KES 5,500' },
+  { name: '1 Bedroom', daily: 'KES 1,000', monthly: 'KES 6,500' },
+  { name: '2 Bedroom', daily: 'KES 1,400', monthly: 'KES 7,500' },
+]
+
+const addons = [
+  { name: 'Couch Cleaning', price: 'From KES 1,500', icon: <Sofa className="h-6 w-6" /> },
+  { name: 'Carpet Cleaning', price: 'From KES 1,500', icon: <Building className="h-6 w-6" /> },
+  { name: 'Extra Window Cleaning', price: 'From KES 500', icon: <Home className="h-6 w-6" /> },
+  { name: 'Heavy Stain Removal', price: 'Price on assessment', icon: <Sparkles className="h-6 w-6" /> },
 ]
 
 export function PricingSection() {
+  const [activeTab, setActiveTab] = useState('residential')
+  const [airbnbRateType, setAirbnbRateType] = useState<'daily' | 'monthly'>('monthly')
+
   return (
     <section id="pricing" className="relative overflow-hidden bg-white py-14 md:py-24">
 
@@ -59,87 +48,178 @@ export function PricingSection() {
           <div className="mb-4 flex items-center justify-center gap-3">
             <span className="h-px w-10 bg-purple-200" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-purple-500">
-              Pricing Plans
+              Pricing & Rates
             </span>
             <span className="h-px w-10 bg-purple-200" />
           </div>
           <h2 className="text-3xl font-bold leading-tight text-slate-900 sm:text-4xl md:text-5xl">
             Flexible Pricing For{' '}
-            <span className="text-purple-600">Every Home</span>
+            <span className="text-purple-600">Every Space</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-base text-slate-500">
-            Transparent, affordable pricing with no hidden fees. Choose the plan that works best for you.
+          <p className="mx-auto mt-4 max-w-xl text-base text-slate-500">
+            Transparent, affordable rates for all your cleaning needs. Select a category below to view our standard pricing.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative flex flex-col rounded-3xl border p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
-                plan.featured
-                  ? 'border-purple-500 bg-gradient-to-br from-purple-600 to-violet-700 text-white shadow-2xl shadow-purple-200'
-                  : 'border-slate-100 bg-white text-slate-900 shadow-sm'
+        {/* Tabs */}
+        <div className="mb-10 flex flex-wrap justify-center gap-3">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`rounded-full px-6 py-2.5 text-sm font-semibold transition-all ${
+                activeTab === tab.id
+                  ? 'bg-purple-600 text-white shadow-md'
+                  : 'bg-purple-50 text-purple-700 hover:bg-purple-100'
               }`}
             >
-              {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-900">
-                  Most Popular
-                </div>
-              )}
-
-              <div>
-                <p className={`text-sm font-semibold ${plan.featured ? 'text-white/70' : 'text-slate-500'}`}>
-                  {plan.name}
-                </p>
-                <div className="mt-3 flex items-end gap-1">
-                  <span className="text-3xl font-extrabold leading-none">{plan.price}</span>
-                  <span className={`mb-1 text-sm ${plan.featured ? 'text-white/60' : 'text-slate-400'}`}>
-                    / {plan.period}
-                  </span>
-                </div>
-                <p className={`mt-3 text-sm leading-6 ${plan.featured ? 'text-white/70' : 'text-slate-500'}`}>
-                  {plan.description}
-                </p>
-              </div>
-
-              <ul className="mt-7 flex flex-col gap-3">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-center gap-3 text-sm">
-                    <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${plan.featured ? 'bg-white/20 text-white' : 'bg-purple-50 text-purple-600'}`}>
-                      <Check className="h-3 w-3" />
-                    </span>
-                    <span className={plan.featured ? 'text-white/90' : 'text-slate-600'}>{f}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8">
-                <Link href="https://wa.me/254718477898" target="_blank">
-                  <Button
-                    className={`w-full rounded-md font-semibold ${
-                      plan.featured
-                        ? 'bg-white text-purple-700 hover:bg-amber-300 hover:text-purple-900'
-                        : 'bg-purple-600 text-white hover:bg-purple-700'
-                    }`}
-                  >
-                    Book This Plan
-                  </Button>
-                </Link>
-              </div>
-            </div>
+              {tab.label}
+            </button>
           ))}
         </div>
 
-        {/* Note */}
-        <p className="mt-8 text-center text-xs text-slate-400">
-          Custom quotes available for large homes, offices & commercial spaces.{' '}
-          <Link href="tel:+254718477898" className="text-purple-500 hover:underline">
-            Call us
-          </Link>{' '}
-          for a free estimate.
-        </p>
+        {/* Residential View */}
+        {activeTab === 'residential' && (
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {residentialPlans.map((plan) => (
+                <div
+                  key={plan.name}
+                  className={`relative flex flex-col rounded-3xl border p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${
+                    plan.featured
+                      ? 'border-purple-500 bg-gradient-to-br from-purple-600 to-violet-700 text-white shadow-2xl shadow-purple-200'
+                      : 'border-slate-100 bg-white text-slate-900 shadow-sm'
+                  }`}
+                >
+                  {plan.featured && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-[10px] font-bold uppercase tracking-widest text-amber-900">
+                      Most Popular
+                    </div>
+                  )}
+                  <Home className={`mx-auto mb-4 h-8 w-8 ${plan.featured ? 'text-white/80' : 'text-purple-500'}`} />
+                  <p className={`text-sm font-semibold ${plan.featured ? 'text-white/70' : 'text-slate-500'}`}>
+                    {plan.name}
+                  </p>
+                  <div className="mt-4 flex items-center justify-center">
+                    <span className="text-2xl font-extrabold leading-none">{plan.price}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-2xl bg-purple-50 p-6 text-center shadow-sm">
+              <p className="text-sm font-medium text-purple-900 md:text-base">
+                <Check className="mb-0.5 mr-2 inline-block h-5 w-5 text-purple-600" />
+                Includes comprehensive cleaning of kitchen, bathroom, windows, and all detailed areas.
+              </p>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <Link href="https://wa.me/254718477898" target="_blank">
+                <Button className="rounded-md bg-purple-600 px-8 py-6 text-base font-semibold text-white hover:bg-purple-700">
+                  Book A Deep Clean
+                </Button>
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {/* Airbnb View */}
+        {activeTab === 'airbnb' && (
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="mb-8 flex justify-center">
+              <div className="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 p-1">
+                <button
+                  onClick={() => setAirbnbRateType('daily')}
+                  className={`rounded-full px-6 py-2 text-sm font-semibold transition-all ${
+                    airbnbRateType === 'daily'
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-500 hover:text-slate-900'
+                  }`}
+                >
+                  Daily
+                </button>
+                <button
+                  onClick={() => setAirbnbRateType('monthly')}
+                  className={`relative rounded-full px-6 py-2 text-sm font-semibold transition-all ${
+                    airbnbRateType === 'monthly'
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-500 hover:text-slate-900'
+                  }`}
+                >
+                  Monthly
+                  <span className="absolute -right-3 -top-3 rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-amber-900 shadow-sm">
+                    Recommended
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-3">
+              {airbnbPlans.map((plan) => (
+                <div
+                  key={plan.name}
+                  className="relative flex flex-col rounded-3xl border border-slate-100 bg-white p-8 text-center text-slate-900 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                >
+                  <Building className="mx-auto mb-4 h-8 w-8 text-purple-500" />
+                  <p className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                    {plan.name}
+                  </p>
+                  
+                  <div className="mt-6">
+                    <p className="text-xs text-slate-400">
+                      {airbnbRateType === 'daily' ? 'Daily Rate' : 'Monthly Rate'}
+                    </p>
+                    <p className="mt-1 text-3xl font-bold">
+                      {airbnbRateType === 'daily' ? plan.daily : plan.monthly}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Link href="https://wa.me/254718477898" target="_blank">
+                <Button className="rounded-md bg-amber-500 px-8 py-6 text-base font-semibold text-slate-900 hover:bg-amber-400">
+                  Experience Our Quality Service Today!
+                </Button>
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {/* Add-Ons View */}
+        {activeTab === 'addons' && (
+          <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto">
+              {addons.map((addon) => (
+                <div
+                  key={addon.name}
+                  className="flex items-center gap-5 rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition hover:border-purple-200 hover:shadow-md"
+                >
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-purple-50 text-purple-600">
+                    {addon.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900">{addon.name}</h3>
+                    <p className="mt-1 text-sm font-bold text-purple-600">{addon.price}</p>
+                  </div>
+                  <div className="ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-slate-50 text-slate-400">
+                    <Plus className="h-4 w-4" />
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-10 text-center">
+              <Link href="https://wa.me/254718477898" target="_blank">
+                <Button className="rounded-md bg-purple-600 px-8 py-6 text-base font-semibold text-white hover:bg-purple-700">
+                  Discuss Your Custom Needs
+                </Button>
+              </Link>
+            </div>
+          </div>
+        )}
 
       </div>
     </section>

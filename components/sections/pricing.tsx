@@ -14,7 +14,7 @@ const tabs = [
 const residentialPlans = [
   { name: 'Studio', price: 'KES 3,000 - 4,000' },
   { name: '1 Bedroom', price: 'KES 4,000 - 5,000' },
-  { name: '2 Bedroom', price: 'KES 5,500 - 7,000', featured: true },
+  { name: '2 Bedroom', price: 'KES 5,500 - 7,000' },
   { name: '3 Bedroom', price: 'KES 7,000 - 8,500+' },
 ]
 

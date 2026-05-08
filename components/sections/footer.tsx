@@ -29,10 +29,10 @@ export function Footer() {
 
       {/* ── Main grid ── */}
       <div className="mx-auto max-w-7xl px-6 py-14 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* ── Col 1 · Brand ── */}
-          <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
+          <div className="col-span-2 flex flex-col gap-5 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-lg font-extrabold tracking-tight">
               <Sparkles className="h-5 w-5 text-purple-400" />
               <span>Sparklet</span>
@@ -100,7 +100,7 @@ export function Footer() {
           </div>
 
           {/* ── Col 4 · Contact ── */}
-          <div>
+          <div className="col-span-2 sm:col-span-1 lg:col-span-1">
             <h4 className="mb-5 text-xs font-bold uppercase tracking-widest text-white/40">
               Contact
             </h4>

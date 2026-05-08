@@ -114,79 +114,36 @@ export function StatsSection() {
         {/* ---------- About Section ---------- */}
         <div className="relative mt-10">
 
-          {/* Image Container */}
-          <div className="relative h-[400px] sm:h-[450px] overflow-hidden rounded-[2rem] md:h-[420px]">
-
-            <Image
-              src="/images/about-image.jpg"
-              alt="Professional cleaning team at work"
-              fill
-              priority
-              className="object-cover"
-            />
-
-            {/* Mobile Overlay */}
-            <div className="absolute inset-0 bg-black/45 md:hidden" />
-
-            {/* Desktop Overlay */}
-            <div className="absolute inset-0 hidden bg-black/10 md:block" />
+          <div className="flex flex-col overflow-hidden rounded-[2rem] bg-slate-50 md:relative md:block md:h-[420px]">
+            {/* Image Container */}
+            <div className="relative h-[250px] w-full md:absolute md:inset-0 md:h-full md:w-full">
+              <Image
+                src="/images/about-image.jpg"
+                alt="Professional cleaning team at work"
+                fill
+                priority
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/10 hidden md:block" />
+            </div>
 
             {/* About Card */}
-            <div
-              className="
-                absolute bottom-0 left-0 right-0
-                bg-white/10
-                p-6
-                text-white
-                backdrop-blur-md
-
-                md:bottom-6
-                md:left-auto
-                md:right-6
-                md:h-[210px]
-                md:w-[360px]
-                md:rounded-[2rem]
-                md:border
-                md:border-white/20
-                md:bg-white/95
-                md:p-7
-                md:text-slate-900
-                md:shadow-2xl
-              "
-            >
-
+            <div className="bg-purple-50 p-6 md:absolute md:bottom-6 md:right-6 md:h-[210px] md:w-[360px] md:rounded-[2rem] md:bg-white/95 md:p-7 md:shadow-2xl md:backdrop-blur-md">
               {/* Badge */}
-              <div
-                className="
-                  mb-4 inline-flex items-center gap-2 rounded-full
-                  bg-white/20 px-4 py-2 text-white
-
-                  md:bg-purple-50
-                  md:text-purple-700
-                "
-              >
-
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-purple-700 md:bg-purple-50">
                 <Sparkles className="h-4 w-4" />
-
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em]">
                   About Us
                 </span>
               </div>
 
               {/* Heading */}
-              <h2 className="text-xl font-bold leading-tight tracking-tight md:text-2xl">
+              <h2 className="text-xl font-bold leading-tight tracking-tight text-slate-900 md:text-2xl">
                 Professional Cleaning Services Designed For Modern Homes.
               </h2>
 
               {/* Description */}
-              <p
-                className="
-                  mt-3 text-sm leading-6 text-white/80
-                  md:text-sm
-                  md:leading-6
-                  md:text-slate-600
-                "
-              >
+              <p className="mt-3 text-sm leading-6 text-slate-600">
                 Skilled cleaners, eco-friendly products,
                 and spotless results tailored for your home.
               </p>
@@ -194,13 +151,10 @@ export function StatsSection() {
               {/* CTA */}
               <Link href="#">
                 <Button className="mt-5 h-auto rounded-md bg-purple-600 px-5 py-4 text-sm font-semibold text-white transition-all hover:bg-purple-700">
-
                   Learn More
-
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-
             </div>
           </div>
 

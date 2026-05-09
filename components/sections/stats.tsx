@@ -80,9 +80,9 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { label: "Happy Families Served", value: "500+" },
+  { label: "Air BNBs Cleaned", value: "200+" },
+  { label: "Offices & Residences", value: "250+" },
   { label: "Customer Satisfaction", value: "99%" },
-  { label: "Homes Cleaned", value: "1,000+" },
   { label: "Satisfaction Guarantee", value: "100%" },
 ];
 
@@ -97,15 +97,21 @@ export function StatsSection() {
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="rounded-3xl border border-slate-100 bg-[#fafafa] p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:p-7"
+              className="group relative overflow-hidden rounded-3xl border border-blue-50 bg-white p-6 shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-900/20 md:p-8"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-500 md:text-xs">
-                {stat.label}
-              </p>
+              {/* Royal Blue Background on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              
+              <div className="relative z-10">
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.15em] text-blue-600 transition-colors duration-300 group-hover:text-blue-200 md:text-xs">
+                  {stat.label}
+                </p>
 
-              <h3 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-5xl">
-                {stat.value}
-              </h3>
+                <h3 className="mt-3 text-4xl font-extrabold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-white md:text-5xl">
+                  {stat.value}
+                  <span className="text-yellow-500">.</span>
+                </h3>
+              </div>
             </div>
           ))}
 
@@ -128,10 +134,10 @@ export function StatsSection() {
             </div>
 
             {/* About Card */}
-            <div className="bg-purple-50 p-6 md:absolute md:bottom-6 md:right-6 md:h-[210px] md:w-[360px] md:rounded-[2rem] md:bg-white/95 md:p-7 md:shadow-2xl md:backdrop-blur-md">
+            <div className="bg-blue-50 p-6 md:absolute md:bottom-6 md:right-6 md:h-auto md:w-[360px] md:rounded-[2rem] md:bg-white/95 md:p-7 md:shadow-2xl md:backdrop-blur-md">
               {/* Badge */}
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-purple-100 px-4 py-2 text-purple-700 md:bg-purple-50">
-                <Sparkles className="h-4 w-4" />
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-yellow-100 px-4 py-2 text-yellow-700 md:bg-yellow-50">
+                <Sparkles className="h-4 w-4 text-yellow-600" />
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em]">
                   About Us
                 </span>
@@ -149,8 +155,8 @@ export function StatsSection() {
               </p>
 
               {/* CTA */}
-              <Link href="#">
-                <Button className="mt-5 h-auto rounded-md bg-purple-600 px-5 py-4 text-sm font-semibold text-white transition-all hover:bg-purple-700">
+              <Link href="/about">
+                <Button className="mt-5 h-auto rounded-md bg-yellow-500 px-5 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-yellow-400">
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

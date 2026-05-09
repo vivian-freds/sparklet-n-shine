@@ -4,14 +4,21 @@ import Link from 'next/link'
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
 import { Phone, Mail, Sparkles, ArrowRight } from 'lucide-react'
 
-const quickLinks = ['Home', 'Services', 'Pricing', 'About Us', 'Contact Us']
+const quickLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'Services', href: '/services' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact Us', href: '/#contact' }
+]
 
 const services = [
-  'Residential Cleaning',
-  'Commercial Cleaning',
-  'Deep Cleaning',
-  'Move In / Move Out Cleaning',
-  'Eco-Friendly Cleaning',
+  { label: 'Air BNB Cleaning', href: '/services' },
+  { label: 'Residential Cleaning', href: '/services' },
+  { label: 'Commercial Cleaning', href: '/services' },
+  { label: 'Deep Cleaning', href: '/services' },
+  { label: 'Move In / Move Out Cleaning', href: '/services' },
+  { label: 'Eco-Friendly Cleaning', href: '/services' },
 ]
 
 const socials = [
@@ -21,7 +28,7 @@ const socials = [
   { icon: FaXTwitter, href: '#', label: 'Twitter / X' },
 ]
 
-const phones = ['+254 718 477 898', '+254 383 2675']
+const phones = ['0724359992']
 
 export function Footer() {
   return (
@@ -34,13 +41,13 @@ export function Footer() {
           {/* ── Col 1 · Brand ── */}
           <div className="col-span-2 flex flex-col gap-5 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 text-lg font-extrabold tracking-tight">
-              <Sparkles className="h-5 w-5 text-purple-400" />
+              <Sparkles className="h-5 w-5 text-blue-400" />
               <span>Sparklet</span>
-              <span className="text-purple-400">&amp; Shine</span>
+              <span className="text-blue-400">&amp; Shine</span>
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-white/60">
-              Professional cleaning services for homes and offices across Nairobi.
+              Professional cleaning services for Air BNBs, homes and offices across Nairobi.
               Our team is dedicated to making every space spotless, healthy, and welcoming.
             </p>
 
@@ -51,7 +58,7 @@ export function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/60 transition hover:border-purple-500 hover:bg-purple-500/20 hover:text-purple-300"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/60 transition hover:border-blue-500 hover:bg-blue-500/20 hover:text-blue-300"
                 >
                   <Icon className="h-3.5 w-3.5" />
                 </Link>
@@ -66,13 +73,13 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               {quickLinks.map((link) => (
-                <li key={link}>
+                <li key={link.label}>
                   <Link
-                    href="#"
-                    className="group flex items-center gap-2 text-sm text-white/70 transition hover:text-purple-300"
+                    href={link.href}
+                    className="group flex items-center gap-2 text-sm text-white/70 transition hover:text-blue-300"
                   >
-                    <ArrowRight className="h-3 w-3 text-purple-500 opacity-0 transition group-hover:opacity-100" />
-                    {link}
+                    <ArrowRight className="h-3 w-3 text-blue-500 opacity-0 transition group-hover:opacity-100" />
+                    {link.label}
                   </Link>
                 </li>
               ))}
@@ -86,13 +93,13 @@ export function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               {services.map((s) => (
-                <li key={s}>
+                <li key={s.label}>
                   <Link
-                    href="#"
-                    className="group flex items-center gap-2 text-sm text-white/70 transition hover:text-purple-300"
+                    href={s.href}
+                    className="group flex items-center gap-2 text-sm text-white/70 transition hover:text-blue-300"
                   >
-                    <ArrowRight className="h-3 w-3 text-purple-500 opacity-0 transition group-hover:opacity-100" />
-                    {s}
+                    <ArrowRight className="h-3 w-3 text-blue-500 opacity-0 transition group-hover:opacity-100" />
+                    {s.label}
                   </Link>
                 </li>
               ))}
@@ -110,18 +117,18 @@ export function Footer() {
                 <Link
                   key={p}
                   href={`tel:${p.replace(/\s/g, '')}`}
-                  className="flex items-center gap-2 text-sm text-white/70 transition hover:text-purple-300"
+                  className="flex items-center gap-2 text-sm text-white/70 transition hover:text-blue-300"
                 >
-                  <Phone className="h-3.5 w-3.5 text-purple-400" />
+                  <Phone className="h-3.5 w-3.5 text-blue-400" />
                   {p}
                 </Link>
               ))}
 
               <Link
                 href="mailto:info@sparkletandshine.co.ke"
-                className="flex items-center gap-2 text-sm text-white/70 transition hover:text-purple-300"
+                className="flex items-center gap-2 text-sm text-white/70 transition hover:text-blue-300"
               >
-                <Mail className="h-3.5 w-3.5 text-purple-400" />
+                <Mail className="h-3.5 w-3.5 text-blue-400" />
                 info@sparkletandshine.co.ke
               </Link>
             </div>

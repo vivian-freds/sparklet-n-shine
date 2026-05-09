@@ -79,10 +79,10 @@ export function ServicesSection() {
               Cleaning Services Designed for Your Lifestyle
             </h2>
 
-            <Link href="#">
+            <Link href="/services">
               <Button
                 variant="outline"
-                className="rounded-md border-slate-200 bg-white px-5 py-5 text-slate-700 hover:bg-purple-50 hover:text-purple-700"
+                className="rounded-md border-slate-200 bg-white px-5 py-5 text-slate-700 hover:bg-yellow-50 hover:text-yellow-700"
               >
                 View All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -132,7 +132,7 @@ export function ServicesSection() {
                       className={cn(
                         "rounded-full border p-2 transition-all duration-300",
                         isOpen
-                          ? "rotate-45 border-purple-600 bg-purple-600 text-white"
+                          ? "rotate-45 border-yellow-500 bg-yellow-500 text-slate-900"
                           : "border-slate-200 text-slate-400"
                       )}
                     >
@@ -162,7 +162,7 @@ export function ServicesSection() {
                           {service.description}
                         </p>
 
-                        <Button className="mt-5 rounded-md bg-purple-600 text-white hover:bg-purple-700">
+                        <Button className="mt-5 rounded-md bg-yellow-500 text-slate-900 font-semibold hover:bg-yellow-400">
                           Learn More
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>

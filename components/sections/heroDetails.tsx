@@ -3,11 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Phone, MessageCircle } from "lucide-react";
 
 export function HeroDetails() {
   return (
-    <section className="relative overflow-hidden px-4 pt-28 pb-16 md:px-6">
+    <section className="relative overflow-hidden px-4 pt-36 pb-4 md:px-6">
 
       {/* Desktop Layout */}
       <div className="mx-auto hidden max-w-6xl items-start justify-between gap-8 md:flex">
@@ -26,12 +26,12 @@ export function HeroDetails() {
         {/* Content */}
         <div className="flex w-1/2 flex-col items-center text-center">
 
-          <div className="mb-5 rounded-full border border-purple-200 bg-white/70 px-4 py-2 text-sm font-medium shadow-sm backdrop-blur">
+          <div className="mb-5 rounded-full border border-blue-200 bg-white/70 px-4 py-2 text-sm font-medium shadow-sm backdrop-blur">
             ✨ Spotless Spaces, Stress-Free Living
           </div>
 
           <h1 className="text-6xl font-bold leading-tight tracking-tight">
-            <span className="text-amber-500">Premium</span> Cleaning <br />
+            <span className="text-yellow-500">Premium</span> Cleaning <br />
             Services You Can <br />
             Count On
           </h1>
@@ -42,15 +42,20 @@ export function HeroDetails() {
             and attention to every detail.
           </p>
 
-          <Link
-            href="https://wa.me/254718477898"
-            target="_blank"
-          >
-            <Button className="mt-8 rounded-md bg-purple-600 px-8 py-6 text-base font-semibold text-white hover:bg-purple-700">
-              Book Via WhatsApp
-              <ArrowUpRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
+            <Link href="tel:0724359992">
+              <Button className="rounded-md bg-yellow-500 px-8 py-6 text-base font-bold text-slate-900 shadow-lg hover:bg-yellow-400">
+                <Phone className="mr-2 h-5 w-5" />
+                Call Us
+              </Button>
+            </Link>
+            <Link href="https://wa.me/254724359992" target="_blank">
+              <Button variant="outline" className="rounded-md border-blue-200 bg-white/70 px-8 py-6 text-base font-bold text-blue-700 backdrop-blur hover:bg-white">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                WhatsApp
+              </Button>
+            </Link>
+          </div>
         </div>
 
         {/* Right Image */}
@@ -70,7 +75,7 @@ export function HeroDetails() {
 
         {/* Background Image */}
         <Image
-          src="/hero-image.jpg"
+          src="/hero-image.png"
           alt="Sparklet & Shine"
           width={1000}
           height={1200}
@@ -88,7 +93,7 @@ export function HeroDetails() {
           </div>
 
           <h1 className="text-4xl font-bold leading-tight">
-            <span className="text-amber-400">Premium</span> Cleaning Services You Can Count On
+            <span className="text-yellow-400">Premium</span> Cleaning Services You Can Count On
           </h1>
 
           <p className="mt-5 text-base leading-7 text-white/80">
@@ -96,15 +101,20 @@ export function HeroDetails() {
             and spotless results every time.
           </p>
 
-          <Link
-            href="https://wa.me/254718477898"
-            target="_blank"
-          >
-            <Button className="mt-8 rounded-md bg-purple-600 px-7 py-6 text-white hover:bg-purple-700">
-              Book Via WhatsApp
-              <ArrowUpRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+          <div className="mt-8 flex w-full flex-col gap-3">
+            <Link href="tel:0724359992" className="w-full">
+              <Button className="w-full rounded-md bg-yellow-500 px-7 py-6 text-base font-bold text-slate-900 shadow-lg hover:bg-yellow-400">
+                <Phone className="mr-2 h-5 w-5" />
+                Call Us
+              </Button>
+            </Link>
+            <Link href="https://wa.me/254724359992" target="_blank" className="w-full">
+              <Button variant="outline" className="w-full rounded-md border-white/20 bg-white/10 px-7 py-6 text-base font-bold text-white backdrop-blur hover:bg-white/20">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                WhatsApp
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 

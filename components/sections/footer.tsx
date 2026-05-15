@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
+import { FaFacebookF, FaInstagram, FaTiktok } from 'react-icons/fa6'
 import { Phone, Mail, ArrowRight } from 'lucide-react'
 import { Logo } from '@/components/ui/logo'
 
@@ -25,11 +25,10 @@ const services = [
 const socials = [
   { icon: FaFacebookF, href: '#', label: 'Facebook' },
   { icon: FaInstagram, href: '#', label: 'Instagram' },
-  { icon: FaLinkedinIn, href: '#', label: 'LinkedIn' },
-  { icon: FaXTwitter, href: '#', label: 'Twitter / X' },
+  { icon: FaTiktok, href: '#', label: 'TikTok' },
 ]
 
-const phones = ['0724359992']
+const phones = ['0724359992', '0718477898']
 
 export function Footer() {
   return (

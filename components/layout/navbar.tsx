@@ -20,7 +20,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
-
+  
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll, { passive: true })

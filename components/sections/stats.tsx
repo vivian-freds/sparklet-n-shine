@@ -80,13 +80,13 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { label: "Air BNBs Cleaned", value: "200+" },
+  { label: <><strong className="text-yellow-600">Airbnb</strong>s Cleaned</>, value: "200+" },
   { label: "Offices & Residences", value: "250+" },
   { label: "Customer Satisfaction", value: "99%" },
   { label: "Satisfaction Guarantee", value: "100%" },
 ];
 
-export function StatsSection() {
+export function StatsSection({ hideLearnMore }: { hideLearnMore?: boolean }) {
   return (
     <section id="about" className="w-full overflow-hidden bg-white py-10 md:py-20">
       <div className="mx-auto max-w-6xl px-4 md:px-6">
@@ -155,12 +155,14 @@ export function StatsSection() {
               </p>
 
               {/* CTA */}
-              <Link href="/about">
-                <Button className="mt-5 h-auto rounded-md bg-yellow-500 px-5 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-yellow-400">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
+              {!hideLearnMore && (
+                <Link href="/about">
+                  <Button className="mt-5 h-auto rounded-md bg-yellow-500 px-5 py-4 text-sm font-semibold text-slate-900 transition-all hover:bg-yellow-400">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              )}
             </div>
           </div>
 

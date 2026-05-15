@@ -43,7 +43,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section (Already has image and about text) */}
-      <StatsSection />
+      <StatsSection hideLearnMore={true} />
 
       {/* Core Values Section */}
       <section className="py-20 bg-white">

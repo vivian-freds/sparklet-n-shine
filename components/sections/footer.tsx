@@ -14,7 +14,7 @@ const quickLinks = [
 ]
 
 const services = [
-  { label: 'Air BNB Cleaning', href: '/services' },
+  { label: <><strong className="text-yellow-500 font-bold">Airbnb</strong> Cleaning</>, href: '/services' },
   { label: 'Residential Cleaning', href: '/services' },
   { label: 'Commercial Cleaning', href: '/services' },
   { label: 'Deep Cleaning', href: '/services' },
@@ -46,7 +46,7 @@ export function Footer() {
             </Link>
 
             <p className="max-w-xs text-sm leading-relaxed text-white/60">
-              Professional cleaning services for Air BNBs, homes and offices across Nairobi.
+              Professional cleaning services for <strong className="font-semibold text-yellow-500">Airbnb</strong>, homes and offices across Nairobi.
               Our team is dedicated to making every space spotless, healthy, and welcoming.
             </p>
 
@@ -91,8 +91,8 @@ export function Footer() {
               Services
             </h4>
             <ul className="flex flex-col gap-3">
-              {services.map((s) => (
-                <li key={s.label}>
+              {services.map((s, idx) => (
+                <li key={idx}>
                   <Link
                     href={s.href}
                     className="group flex items-center gap-2 text-sm text-white/70 transition hover:text-blue-300"

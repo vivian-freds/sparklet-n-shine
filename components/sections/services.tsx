@@ -12,42 +12,42 @@ const DEFAULT_IMAGE = "/images/bnb-cleaning.png";
 const services = [
   {
     id: "01",
-    title: "BnB & Short-Stay Cleaning",
+    title: "Airbnb & Short-Stay Cleaning",
     description:
       "We specialise in quick, thorough turnovers for Airbnb and short-stay properties. Fresh linens, restocked amenities, and a hotel-standard finish — every time.",
-    image: DEFAULT_IMAGE,
+    image: "/images/bnb-cleaning.png",
   },
   {
     id: "02",
     title: "Commercial & Office Cleaning",
     description:
       "Create a healthier, more productive workplace with professional cleaning services for offices, retail spaces, and businesses.",
-    image: DEFAULT_IMAGE,
+    image: "/images/commercial_cleaning_1778827651938.png",
   },
   {
     id: "03",
     title: "Move-In / Move-Out Cleaning",
     description:
       "Take the stress out of moving with detailed deep-cleaning for tenants, landlords, and homeowners.",
-    image: DEFAULT_IMAGE,
+    image: "/images/move_in_cleaning_1778827666240.png",
   },
   {
     id: "04",
     title: "Residential Cleaning",
     description:
       "Personalised home cleaning services tailored to your lifestyle. From deep cleans to regular maintenance, we keep your sanctuary spotless.",
-    image: DEFAULT_IMAGE,
+    image: "/images/residential_cleaning_1778827681402.png",
   },
   {
     id: "05",
     title: "Post-Construction Cleaning",
     description:
       "We remove dust, debris, and construction residue after renovations or new builds — leaving your space ready to move in.",
-    image: DEFAULT_IMAGE,
+    image: "/images/post_construction_1778827694625.png",
   },
 ];
 
-export function ServicesSection() {
+export function ServicesSection({ hideLearnMore, hideViewAll }: { hideLearnMore?: boolean; hideViewAll?: boolean } = {}) {
   const [openIds, setOpenIds] = useState<string[]>(["01"]);
 
   const toggle = (id: string) => {
@@ -79,15 +79,17 @@ export function ServicesSection() {
               Cleaning Services Designed for Your Lifestyle
             </h2>
 
-            <Link href="/services">
-              <Button
-                variant="outline"
-                className="rounded-md border-slate-200 bg-white px-5 py-5 text-slate-700 hover:bg-yellow-50 hover:text-yellow-700"
-              >
-                View All Services
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            {!hideViewAll && (
+              <Link href="/services">
+                <Button
+                  variant="outline"
+                  className="rounded-md border-slate-200 bg-white px-5 py-5 text-slate-700 hover:bg-yellow-50 hover:text-yellow-700"
+                >
+                  View All Services
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            )}
 
           </div>
         </div>
@@ -162,10 +164,12 @@ export function ServicesSection() {
                           {service.description}
                         </p>
 
-                        <Button className="mt-5 rounded-md bg-yellow-500 text-slate-900 font-semibold hover:bg-yellow-400">
-                          Learn More
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+                        {!hideLearnMore && (
+                          <Button className="mt-5 rounded-md bg-yellow-500 text-slate-900 font-semibold hover:bg-yellow-400">
+                            Learn More
+                            <ArrowRight className="ml-2 h-4 w-4" />
+                          </Button>
+                        )}
 
                       </div>
 

@@ -37,9 +37,8 @@ export function HeroDetails() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-muted-foreground">
-            We don&apos;t just clean — we bring peace of mind.
-            With eco-friendly products, skilled cleaners,
-            and attention to every detail.
+            Specializing in <strong className="font-semibold text-slate-900">Airbnb</strong>, residential, and commercial spaces. 
+            We don&apos;t just clean — we bring peace of mind with eco-friendly products and attention to every detail.
           </p>
 
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row">
@@ -97,8 +96,8 @@ export function HeroDetails() {
           </h1>
 
           <p className="mt-5 text-base leading-7 text-white/80">
-            Eco-friendly products, skilled cleaners,
-            and spotless results every time.
+            Specializing in <strong className="font-semibold text-white">Airbnb</strong>, residential, and commercial spaces. 
+            Eco-friendly products, skilled cleaners, and spotless results every time.
           </p>
 
           <div className="mt-8 flex w-full flex-col gap-3">

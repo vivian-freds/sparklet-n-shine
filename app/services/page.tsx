@@ -17,7 +17,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services List (Uses the existing component) */}
-      <ServicesSection />
+      <ServicesSection hideViewAll={true} hideLearnMore={true} />
 
       {/* Pricing Options */}
       <PricingSection />

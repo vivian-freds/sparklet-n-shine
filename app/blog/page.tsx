@@ -2,34 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CalendarDays } from "lucide-react";
 import { CTASection, Footer } from "@/components/sections";
+import { Metadata } from "next";
+import { posts } from "./data";
 
-const posts = [
-  {
-    title: "5 Tips for a Flawless Airbnb Turnover",
-    excerpt: "Learn how to impress your guests and secure 5-star reviews with our comprehensive turnover checklist.",
-    category: "Airbnb Hosting",
-    date: "May 12, 2026",
-    image: "/images/bnb-cleaning.png"
-  },
-  {
-    title: "Why Eco-Friendly Cleaning Products Matter",
-    excerpt: "Discover the benefits of switching to sustainable, non-toxic cleaning products for your home and family.",
-    category: "Green Living",
-    date: "April 28, 2026",
-    image: "/images/cleaner.png"
-  },
-  {
-    title: "Deep Cleaning vs. Regular Cleaning: What's the Difference?",
-    excerpt: "Not sure which service you need? We break down exactly what happens during a deep clean.",
-    category: "Cleaning Tips",
-    date: "April 15, 2026",
-    image: "/images/about-image.jpg"
+export const metadata: Metadata = {
+  title: "Cleaning Blog & Tips | Sparklet & Shine",
+  description: "Read the latest tips, guides, and news about professional cleaning, Airbnb turnovers, and eco-friendly home maintenance across Nairobi.",
+  openGraph: {
+    title: "Cleaning Blog & Tips | Sparklet & Shine",
+    description: "Read the latest tips, guides, and news about professional cleaning, Airbnb turnovers, and eco-friendly home maintenance across Nairobi.",
+    type: "website",
   }
-];
+};
 
 export default function BlogPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Sparklet & Shine Cleaning Blog",
+    "description": "Expert advice, tips, and insights on residential and commercial cleaning in Nairobi.",
+    "url": "https://sparkletandshine.co.ke/blog",
+    "blogPost": posts.map(post => ({
+      "@type": "BlogPosting",
+      "headline": post.title,
+      "description": post.excerpt,
+      "datePublished": post.date,
+      "author": {
+        "@type": "Organization",
+        "name": "Sparklet & Shine Co."
+      }
+    }))
+  };
+
   return (
     <main className="flex min-h-screen flex-col bg-slate-50/50">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       
       {/* Page Header */}
       <section className="relative px-4 pt-32 pb-16 md:px-6">
@@ -47,8 +57,8 @@ export default function BlogPage() {
       <section className="pb-24 px-4 md:px-6">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post, idx) => (
-              <article key={idx} className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-lg">
+            {posts.map((post) => (
+              <article key={post.id} className="group flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition hover:shadow-lg">
                 <div className="relative h-60 w-full overflow-hidden bg-slate-100">
                   <Image
                     src={post.image}
@@ -71,7 +81,7 @@ export default function BlogPage() {
                   <p className="mb-6 flex-1 text-sm leading-relaxed text-slate-600">
                     {post.excerpt}
                   </p>
-                  <Link href="#" className="inline-flex items-center text-sm font-bold text-yellow-600 transition-colors hover:text-yellow-500">
+                  <Link href={`/blog/${post.id}`} className="inline-flex items-center text-sm font-bold text-yellow-600 transition-colors hover:text-yellow-500">
                     Read Article
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>

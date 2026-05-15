@@ -22,9 +22,31 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sparkletandshine.co.ke"),
   title: "Sparklet & Shine | Professional Cleaning Services",
-  description:
-    "Premium residential and commercial cleaning services in Nairobi. Book online via WhatsApp today.",
+  description: "Premium residential and commercial cleaning services in Nairobi. Book online via WhatsApp today.",
+  openGraph: {
+    title: "Sparklet & Shine | Professional Cleaning Services",
+    description: "Premium residential and commercial cleaning services in Nairobi. Book online via WhatsApp today.",
+    url: "https://sparkletandshine.co.ke",
+    siteName: "Sparklet & Shine",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sparklet & Shine Cleaning Services",
+      },
+    ],
+    locale: "en_KE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sparklet & Shine | Professional Cleaning Services",
+    description: "Premium residential and commercial cleaning services in Nairobi. Book online via WhatsApp today.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

@@ -124,11 +124,11 @@ export function StatsSection({ hideLearnMore }: { hideLearnMore?: boolean }) {
             {/* Image Container */}
             <div className="relative h-[250px] w-full md:absolute md:inset-0 md:h-full md:w-full">
               <Image
-                src="/images/about-image.jpg"
+                src="/images/about_lady_royal_blue_1778827871894.png"
                 alt="Professional cleaning team at work"
                 fill
                 priority
-                className="object-cover"
+                className="object-cover object-top"
               />
               <div className="absolute inset-0 bg-black/10 hidden md:block" />
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { Menu, X, MessageCircle, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -18,6 +19,7 @@ const links = [
 export function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -60,15 +62,22 @@ export function Navbar() {
 
             {/* Desktop Nav */}
             <nav className="hidden items-center gap-8 md:flex">
-              {links.map(({ label, href }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  className="text-sm font-semibold text-slate-600 transition-all hover:text-blue-600 underline decoration-2 underline-offset-[6px] decoration-transparent hover:decoration-blue-600"
-                >
-                  {label}
-                </Link>
-              ))}
+              {links.map(({ label, href }) => {
+                const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href.split('#')[0]) && href.split('#')[0] !== '/';
+                return (
+                  <Link
+                    key={label}
+                    href={href}
+                    className={`text-sm font-semibold transition-all underline decoration-2 underline-offset-[6px] ${
+                      isActive
+                        ? 'text-blue-700 decoration-yellow-500'
+                        : 'text-slate-600 decoration-transparent hover:text-blue-600 hover:decoration-blue-600'
+                    }`}
+                  >
+                    {label}
+                  </Link>
+                );
+              })}
             </nav>
 
             {/* Premium Desktop CTA */}
@@ -99,16 +108,23 @@ export function Navbar() {
             <div className="absolute left-0 top-[calc(100%+16px)] w-full px-4 md:hidden">
               <div className="rounded-3xl border border-slate-100 bg-white/95 p-6 shadow-2xl backdrop-blur-xl">
                 <nav className="flex flex-col gap-5">
-                  {links.map(({ label, href }) => (
-                    <Link
-                      key={label}
-                      href={href}
-                      onClick={() => setOpen(false)}
-                      className="text-base font-semibold text-slate-700 transition-all hover:text-blue-600 underline decoration-2 underline-offset-[6px] decoration-transparent hover:decoration-blue-600"
-                    >
-                      {label}
-                    </Link>
-                  ))}
+                  {links.map(({ label, href }) => {
+                    const isActive = href === '/' ? pathname === '/' : pathname.startsWith(href.split('#')[0]) && href.split('#')[0] !== '/';
+                    return (
+                      <Link
+                        key={label}
+                        href={href}
+                        onClick={() => setOpen(false)}
+                        className={`text-base font-semibold transition-all underline decoration-2 underline-offset-[6px] ${
+                          isActive
+                            ? 'text-blue-700 decoration-yellow-500'
+                            : 'text-slate-700 decoration-transparent hover:text-blue-600 hover:decoration-blue-600'
+                        }`}
+                      >
+                        {label}
+                      </Link>
+                    );
+                  })}
                 </nav>
 
                 <div className="mt-8 pt-6 border-t border-slate-100">

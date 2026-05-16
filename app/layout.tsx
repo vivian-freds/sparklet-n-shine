@@ -3,6 +3,8 @@ import { Sora, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 
+import { Analytics } from "@vercel/analytics/next"
+
 /* ── Premium SaaS font stack ──────────────────────────────────────
    Sora  → headings  (sharp, modern, used by top SaaS products)
    Outfit → body     (geometric, crisp, highly legible)
@@ -66,6 +68,7 @@ export default function RootLayout({
         <Navbar />
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }

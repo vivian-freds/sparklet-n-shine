@@ -105,21 +105,21 @@ export default function AboutPage() {
       {/* Mission Section with Image Collage */}
       <section className="py-24 overflow-hidden bg-white relative">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-slate-50 rounded-full blur-3xl -z-10 translate-x-1/3 -translate-y-1/3" />
-        
+
         <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
-            
+
             {/* Text Content */}
             <motion.div {...fadeInUp} className="lg:w-1/2">
               <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-blue-700">
                 <Target className="h-4 w-4" />
                 <span className="text-xs font-bold uppercase tracking-[0.2em] font-heading">Our Mission</span>
               </div>
-              
+
               <h2 className="mb-8 text-3xl font-extrabold leading-tight text-slate-900 md:text-5xl font-heading">
                 Redefining the standard of clean across Nairobi.
               </h2>
-              
+
               <div className="space-y-8 text-lg leading-relaxed text-slate-600 font-light">
                 <p>
                   Sparklet &amp; Shine Co. was founded with a simple goal: to provide reliable, top-tier cleaning services that actually make a difference. We recognized a gap in the market for professional cleaners who treat every home and office with the same meticulous care they would their own.
@@ -127,16 +127,16 @@ export default function AboutPage() {
                 <p>
                   We are not just a cleaning company; we are your partners in maintaining a healthy, stress-free environment. Whether you manage a bustling Airbnb, a large corporate office, or simply need an extra hand keeping your home spotless, our highly-trained team brings precision, eco-friendly products, and a commitment to excellence to every job.
                 </p>
-                
+
                 <div className="pt-6 border-t border-slate-100">
                   <div className="flex items-center gap-5">
                     <div className="h-16 w-16 rounded-2xl bg-blue-600 overflow-hidden relative shadow-lg rotate-3 group">
-                       <Image 
-                         src="/images/about_lady_royal_blue_1778827871894.png" 
-                         alt="Sparklet Service" 
-                         fill 
-                         className="object-cover object-top transition-transform duration-500 group-hover:scale-110" 
-                       />
+                      <Image
+                        src="/images/about_lady_royal_blue_1778827871894.png"
+                        alt="Sparklet Service"
+                        fill
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                      />
                     </div>
                     <div>
                       <h4 className="font-bold text-lg text-slate-900 font-heading">Dedicated Team</h4>
@@ -150,31 +150,31 @@ export default function AboutPage() {
             {/* Image Collage Area */}
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="lg:w-1/2 w-full relative">
               <div className="grid grid-cols-2 gap-4 md:gap-6">
-                 <div className="space-y-4 md:space-y-6">
-                   <div className="h-56 md:h-64 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
-                     <Image src="/images/residential_cleaning_1778827681402.png" alt="Residential Cleaning" fill className="object-cover" />
-                   </div>
-                   <div className="h-72 md:h-80 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
-                     <Image src="/images/commercial_cleaning_1778827651938.png" alt="Commercial Cleaning" fill className="object-cover" />
-                   </div>
-                 </div>
-                 <div className="space-y-4 md:space-y-6 pt-12 md:pt-16">
-                   <div className="h-72 md:h-80 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
-                     <Image src="/images/move_in_cleaning_1778827666240.png" alt="Move-in Cleaning" fill className="object-cover" />
-                   </div>
-                   <div className="h-56 md:h-64 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
-                     <Image src="/images/post_construction_1778827694625.png" alt="Post-construction" fill className="object-cover" />
-                   </div>
-                 </div>
+                <div className="space-y-4 md:space-y-6">
+                  <div className="h-56 md:h-64 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
+                    <Image src="/images/residential_cleaning_1778827681402.png" alt="Residential Cleaning" fill className="object-cover" />
+                  </div>
+                  <div className="h-72 md:h-80 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
+                    <Image src="/images/commercial_cleaning_1778827651938.png" alt="Commercial Cleaning" fill className="object-cover" />
+                  </div>
+                </div>
+                <div className="space-y-4 md:space-y-6 pt-12 md:pt-16">
+                  <div className="h-72 md:h-80 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
+                    <Image src="/images/move_in_cleaning_1778827666240.png" alt="Move-in Cleaning" fill className="object-cover" />
+                  </div>
+                  <div className="h-56 md:h-64 rounded-[2rem] bg-slate-100 overflow-hidden relative shadow-xl border border-slate-100">
+                    <Image src="/images/post_construction_1778827694625.png" alt="Post-construction" fill className="object-cover" />
+                  </div>
+                </div>
               </div>
-              
+
               {/* Floating Badge */}
               <div className="absolute -bottom-8 -left-8 bg-yellow-500 text-slate-900 p-6 rounded-[2rem] shadow-2xl z-20 max-w-[200px] hidden md:block border-4 border-white">
                 <Zap className="h-8 w-8 mb-2" />
                 <p className="font-bold leading-tight">Same Day Availability in Selected Areas</p>
               </div>
             </motion.div>
-            
+
           </div>
         </div>
       </section>
@@ -191,7 +191,7 @@ export default function AboutPage() {
             >
               <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50">
                 <Image
-                  src="/images/cofounders.png"
+                  src="/images/founders.png"
                   alt="Vivian, Maureen, and Harriet - Sparklet & Shine Founders"
                   width={1200}
                   height={800}

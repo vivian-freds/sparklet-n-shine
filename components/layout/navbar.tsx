@@ -88,7 +88,7 @@ export function Navbar() {
                 </div>
                 <div className="flex flex-col text-left">
                   <span className="text-[9px] font-bold uppercase tracking-widest text-slate-400">Call / WhatsApp</span>
-                  <span className="text-sm font-bold leading-none text-white tracking-wide">0724359992</span>
+                  <span className="text-sm font-bold leading-none text-white tracking-wide">0724860105</span>
                 </div>
               </Link>
             </div>

@@ -42,7 +42,7 @@ export function CTASection() {
             {/* CTAs */}
             <div className="flex shrink-0 flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
               <Link
-                href="tel:0724359992"
+                href="tel:0724860105"
                 className="inline-flex items-center justify-center gap-2 rounded-md bg-yellow-500 px-6 py-3 text-sm font-bold text-slate-900 shadow-lg transition hover:bg-yellow-400"
               >
                 <Phone className="h-4 w-4" />

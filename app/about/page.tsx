@@ -192,7 +192,7 @@ export default function AboutPage() {
               <div className="w-full rounded-3xl overflow-hidden shadow-xl border border-slate-100 bg-slate-50">
                 <Image
                   src="/images/founders.png"
-                  alt="Vivian, Maureen, and Harriet - Sparklet & Shine Founders"
+                  alt="Vivian, Maurine, and Harriet - Sparklet & Shine Founders"
                   width={1200}
                   height={800}
                   className="w-full h-auto object-cover"
@@ -214,7 +214,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-8 tracking-tight font-heading">A Vision for <span className="text-blue-600">Excellence.</span></h2>
               <div className="space-y-6 text-lg text-slate-600 leading-relaxed font-light">
                 <p>
-                  Sparklet & Shine Co. was founded on a simple principle: every space deserves to shine. Led by <strong>Vivian</strong>, <strong>Maureen</strong>, and <strong>Harriet</strong>, we have built a team that Nairobi trusts for precision and care.
+                  Sparklet & Shine Co. was founded on a simple principle: every space deserves to shine. Led by <strong>Vivian</strong>, <strong>Maurine</strong>, and <strong>Harriet</strong>, we have built a team that Nairobi trusts for precision and care.
                 </p>
                 <p>
                   Whether it&apos;s a high-end <strong>Air BNB</strong>, your <strong>family home</strong>, or a <strong>modern office</strong>, our founders personally ensure that our standard of clean is never compromised.
@@ -227,7 +227,7 @@ export default function AboutPage() {
                   <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mt-1">Founder</p>
                 </div>
                 <div>
-                  <p className="text-slate-900 font-bold text-xl font-heading">Maureen</p>
+                  <p className="text-slate-900 font-bold text-xl font-heading">Maurine</p>
                   <p className="text-blue-600 text-[10px] font-bold uppercase tracking-widest mt-1">Partner</p>
                 </div>
                 <div>

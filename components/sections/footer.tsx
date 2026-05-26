@@ -28,7 +28,7 @@ const socials = [
   { icon: FaTiktok, href: '#', label: 'TikTok' },
 ]
 
-const phones = ['0724359992', '0718477898']
+const phones = ['0724359992', '0718477898', '0724860105']
 
 export function Footer() {
   return (
